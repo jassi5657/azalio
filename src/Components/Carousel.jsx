@@ -8,7 +8,6 @@ const Carousel = () => {
             id: 1, 
             img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Red_Hat_logo.svg/640px-Red_Hat_logo.svg.png',
             title: 'Red Hat', 
-            // topic: 'Aerphone', 
             description: 'Short description about Aerphone.',
             details: 'Detailed description about Aerphone GHTK.',
             specs: [
@@ -20,10 +19,9 @@ const Carousel = () => {
             ]
         },
         { 
-            id: 1, 
+            id: 2, 
             img: './ibm.png',
             title: 'IBM', 
-            // topic: 'Aerphone', 
             description: 'Short description about Aerphone.',
             details: 'Detailed description about Aerphone GHTK.',
             specs: [
@@ -35,10 +33,9 @@ const Carousel = () => {
             ]
         },
         { 
-            id: 1, 
+            id: 3, 
             img: './nokia.png',
             title: 'Nokia', 
-            // topic: 'Aerphone', 
             description: 'Short description about Aerphone.',
             details: 'Detailed description about Aerphone GHTK.',
             specs: [
@@ -50,10 +47,9 @@ const Carousel = () => {
             ]
         },
         { 
-            id: 1, 
+            id: 4, 
             img: './f5.png',
             title: 'F5', 
-            // topic: 'Aerphone', 
             description: 'Short description about Aerphone.',
             details: 'Detailed description about Aerphone GHTK.',
             specs: [
@@ -64,25 +60,18 @@ const Carousel = () => {
                 { label: 'Controlled', value: 'Touch' }
             ]
         },
-      
-        
-        // Add more items here
     ]);
 
     const nextButtonRef = useRef(null);
     const prevButtonRef = useRef(null);
     const carouselRef = useRef(null);
     const listHTMLRef = useRef(null);
-    const seeMoreButtonsRef = useRef([]);
-    const backButtonRef = useRef(null);
 
     useEffect(() => {
         const nextButton = nextButtonRef.current;
         const prevButton = prevButtonRef.current;
         const carousel = carouselRef.current;
         const listHTML = listHTMLRef.current;
-        const seeMoreButtons = seeMoreButtonsRef.current;
-        const backButton = backButtonRef.current;
 
         let unAcceppClick;
 
@@ -106,45 +95,29 @@ const Carousel = () => {
             }, 2000);
         };
 
+        const autoSlide = setInterval(() => showSlider('next'), 3000); // Change slide every 3 seconds
+
         nextButton.onclick = () => showSlider('next');
         prevButton.onclick = () => showSlider('prev');
 
-        seeMoreButtons.forEach((button) => {
-            button.onclick = () => {
-                carousel.classList.remove('next', 'prev');
-                carousel.classList.add('showDetail');
-            };
-        });
-
-        backButton.onclick = () => {
-            carousel.classList.remove('showDetail');
-        };
-
         return () => {
-            // Cleanup event listeners on component unmount
+            clearInterval(autoSlide); // Clear interval on unmount
             nextButton.onclick = null;
             prevButton.onclick = null;
-            seeMoreButtons.forEach((button) => (button.onclick = null));
-            backButton.onclick = null;
         };
     }, []);
 
     return (
         <div className="carousel" ref={carouselRef}>
-                <h1 className='partern'>Co-innovating with industry leaders</h1>
-                <p className='parternP'>The best of our partners</p>
+            <h1 className='partern'>Co-innovating with industry leaders</h1>
+            <p className='parternP'>The best of our partners</p>
             <div className="list" ref={listHTMLRef}>
                 {items.map((item, index) => (
                     <div className="item" key={item.id}>
                         <img src={item.img} alt={`Item ${index + 1}`} />
-                        <div className="introduce">
-                            {/* <div className="title">{item.title}</div> */}
-                            <div className="topic">{item.topic}</div>
-                            {/* <div className="des">{item.description}</div> */}
-                            {/* <button className="seeMore" ref={(el) => (seeMoreButtonsRef.current[index] = el)}>
-                                SEE MORE &#8599;
-                            </button> */}
-                        </div>
+                        {/* <div className="introduce">
+                            <div className="topic">{item.title}</div>
+                        </div> */}
                         <div className="detail">
                             <div className="title">{item.details}</div>
                             <div className="specifications">
@@ -155,20 +128,16 @@ const Carousel = () => {
                                     </div>
                                 ))}
                             </div>
-                            
                         </div>
                     </div>
                 ))}
             </div>
             <div className="arrows">
                 <button id="prev" ref={prevButtonRef}>
-                <FaArrowCircleLeft />
+                    <FaArrowCircleLeft />
                 </button>
                 <button id="next" ref={nextButtonRef}>
-                <FaArrowCircleRight />
-                </button>
-                <button id="back" ref={backButtonRef}>
-                    See All &#8599;
+                    <FaArrowCircleRight />
                 </button>
             </div>
         </div>
