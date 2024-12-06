@@ -95,7 +95,7 @@ const Carousel = () => {
             }, 2000);
         };
 
-        const autoSlide = setInterval(() => showSlider('next'), 3000); // Change slide every 3 seconds
+        const autoSlide = setInterval(() => showSlider('next'), 4000); // Change slide every 3 seconds
 
         nextButton.onclick = () => showSlider('next');
         prevButton.onclick = () => showSlider('prev');

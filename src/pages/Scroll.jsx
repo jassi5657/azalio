@@ -61,7 +61,8 @@ const HorizontalScroll = () => {
           </div>
           {/* <h1>Welcome to Horizontal Scroll with GSAP! Here you can find the famous effect you can often see in Awwwards winning websites.</h1>
           <p>Not enough? <br /> I've also added some Smooth Scroll effect with Lenis!</p> */}
-          <img src="https://cdn-llelb.nitrocdn.com/UftRSQDyRkDCbWJQAdpKGlpgEtIfhLUm/assets/images/optimized/rev-9b7e781/aimarketingengineers.com/wp-content/uploads/2024/05/What-Are-the-Essential-Ad-Policies-and-Compliance-Standards-in-Advertising.webp" class="mainImg" />
+          {/* <img src="https://cdn-llelb.nitrocdn.com/UftRSQDyRkDCbWJQAdpKGlpgEtIfhLUm/assets/images/optimized/rev-9b7e781/aimarketingengineers.com/wp-content/uploads/2024/05/What-Are-the-Essential-Ad-Policies-and-Compliance-Standards-in-Advertising.webp" class="mainImg" /> */}
+          <img src="./main.jpg" className="mainImg" />
 
 
           <div className="desc" >
