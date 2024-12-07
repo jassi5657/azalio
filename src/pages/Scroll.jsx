@@ -8,6 +8,7 @@ import { Button, Card } from 'antd';
 import { Typewriter } from 'react-simple-typewriter';
 import Navbar from '../Components/Navbar';
 import Carousel from '../Components/Carousel';
+import Test from './Test';
 
 
 const HorizontalScroll = () => {
@@ -211,9 +212,16 @@ const HorizontalScroll = () => {
         </div>
       </div>
 
-      {/* <footer className="footer"> */}
        <Carousel/>
-      {/* </footer> */}
+      <footer className="footer">
+
+<div>
+
+
+
+       <Test/>
+</div>
+      </footer>
     </div>
   );
 };

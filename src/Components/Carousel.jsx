@@ -95,7 +95,7 @@ const Carousel = () => {
             }, 2000);
         };
 
-        const autoSlide = setInterval(() => showSlider('next'), 4000); // Change slide every 3 seconds
+        const autoSlide = setInterval(() => showSlider('next'), 2000); // Change slide every 3 seconds
 
         nextButton.onclick = () => showSlider('next');
         prevButton.onclick = () => showSlider('prev');
@@ -134,10 +134,10 @@ const Carousel = () => {
             </div>
             <div className="arrows">
                 <button id="prev" ref={prevButtonRef}>
-                    <FaArrowCircleLeft />
+                    {/* <FaArrowCircleLeft /> */}
                 </button>
                 <button id="next" ref={nextButtonRef}>
-                    <FaArrowCircleRight />
+                    {/* <FaArrowCircleRight /> */}
                 </button>
             </div>
         </div>

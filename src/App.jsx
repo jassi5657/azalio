@@ -5,6 +5,9 @@ import './App.css'
 import HorizontalScroll from './pages/Scroll'
 import Navbar from './Components/Navbar'
 import Carousel from './Components/Carousel'
+import CloudScroll from './Components/CloudScroll'
+import Test from './pages/Test'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +16,8 @@ function App() {
     <>
     {/* <Navbar/> */}
     <HorizontalScroll/>
+    {/* <Test/>  */}
+    {/* <CloudScroll/> */}
     {/* <Carousel/> */}
 
     </>
